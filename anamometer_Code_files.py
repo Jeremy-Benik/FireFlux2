@@ -1,3 +1,4 @@
+'''This file loops through all the anemometer files, truncates the data for 30 min before the fire and 30 minutes after the fire and plots them'''
 # -*- coding: utf-8 -*-
 """
 Created on Fri Nov 19 11:23:59 2021

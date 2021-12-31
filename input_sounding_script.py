@@ -1,3 +1,5 @@
+'''This code creates a sounding plot from the sounding data on the website along with a lot of other plots comparing temperature, theta, and other variables with 
+height'''
 # -*- coding: utf-8 -*-
 """
 Created on Thu Oct 28 10:19:24 2021

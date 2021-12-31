@@ -1,3 +1,5 @@
+'''This code plots the data from the main tower after it has been truncated down to 35 minutes. There is no averaging in this code for the first chart.
+'''
 # -*- coding: utf-8 -*-
 """
 Created on Mon Dec 20 15:44:32 2021
@@ -133,7 +135,7 @@ plt.tight_layout()
 plt.show()
 # %% Making a plots
 time2 = np.arange(0, len(time[::n]) - 1)
-fig, ax = plt.subplots(4, 3, figsize = (20, 10))
+'''fig, ax = plt.subplots(4, 3, figsize = (20, 10))
 ax[0, 0].plot(time2, loops(ux20, x) , 'r', label = 'ux20m winds')
 ax[0, 0].set_title('ux20 winds vs time(s)', fontsize = 18, fontweight = 'bold')
 ax[0, 0].set_ylabel('Speed (m/s)', fontsize = 18, fontweight = 'bold')
@@ -220,7 +222,7 @@ ax[2, 2].grid()
 ax[3, 2].grid()
 plt.tight_layout()
 plt.show()
-# %% Making the plot
+# %% Making the plot '''
 '''
 fig, ax = plt.subplots(figsize = (15, 10))
 u = ux20.values * units('m/s')

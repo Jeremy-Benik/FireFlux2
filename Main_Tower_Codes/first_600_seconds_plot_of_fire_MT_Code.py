@@ -1,3 +1,6 @@
+'''This code truncates the original Main Tower file down to 10 minutes after the fire started, and plots all variables to see 
+how they change as the firefront passes. This code also calculates a 5 second average and plots that to see how the average values were changing'''
+
 # -*- coding: utf-8 -*-
 """
 Created on Wed Dec 22 12:06:54 2021
@@ -16,7 +19,7 @@ import matplotlib.pyplot as plt
 # %% This section of the code will read in the dataframe as df1 and it will be truncated based on
 #5 minutes before the fire started, and 30 minutes after the fire started
 #Since the fire started at 15:04:08, and the data is 10hz, I indexed to the 8th second in the file
-df1 = pd.read_csv('F:/Fireflux2/Website_Docs/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', parse_dates=['TIMESTAMP'], skiprows = (0, 2, 3))
+df1 = pd.read_csv('/media/jeremy/Data/Fireflux2/Website_Docs/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', parse_dates=['TIMESTAMP'], skiprows = (0, 2, 3))
 #this reads in the dataframe and parses the dates. I also skip unecessary rows. This csv is modified by removing the record column and 
 #moving the other columns over
 df = df1.truncate(before= np.where(df1['TIMESTAMP'] == '1/30/2013  15:04:00')[0][80], 

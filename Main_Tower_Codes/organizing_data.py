@@ -1,3 +1,7 @@
+'''this code takes the original file, and truncates it to whatever time interval needed, then saves it as another .csv file
+to be used in another code'''
+
+
 # -*- coding: utf-8 -*-
 """
 Created on Mon Dec 20 14:54:21 2021

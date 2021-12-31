@@ -1,3 +1,6 @@
+'''This code loops through all the .csv files from the Short Towers and plots the U, V, W, and T for 30 minutes after ignition.
+This code also displays a bar graph of the averaged wind speed calculateed from U and V, These time averages occur at 4 min, 4min before and after
+the fire (8min total), 10 minutes after ignition, and 15 minutes after ignition. '''
 # -*- coding: utf-8 -*-
 """
 Created on Mon Dec 27 09:22:29 2021

@@ -1,3 +1,5 @@
+'''This code creates a bar plot of the time averaged variables in the Main Tower Data, and plots them versus other time averaged variables
+to see which time average would result in a more representative time average for the wind for the experiment.'''
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """

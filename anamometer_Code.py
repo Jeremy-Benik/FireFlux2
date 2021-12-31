@@ -1,3 +1,5 @@
+'''This code was mainly used to mess around with the anemometer data and try to plot it, this way I can then use this code to loop
+through all the other files and plot those so I don't have to plot them individually'''
 # -*- coding: utf-8 -*-
 """
 Created on Fri Nov 19 11:23:59 2021

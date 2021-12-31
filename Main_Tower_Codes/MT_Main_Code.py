@@ -1,3 +1,6 @@
+'''This code creates a plot of all the variables in the file for 4 minutes before the ignition and 30 minutes after the ignition.
+this code also averages the time over 5 seconds (black line) to see what the averages would be like'''
+
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec 21 15:39:50 2021

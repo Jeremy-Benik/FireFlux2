@@ -1,8 +1,12 @@
+'''This program computes the average of all variables given in the Main Tower data at a given time interval. To change the
+time interval change in line 20 and 21 the time you want to average the file at (15:04 is the fire start time).
+The file begins at 15:00'''
+
 # -*- coding: utf-8 -*-
 """
 Created on Thu Dec 23 13:29:00 2021
 
-@author: Rubix
+@author: Jeremy Benik
 """
 
 import numpy as np

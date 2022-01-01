@@ -1,0 +1,49 @@
+The Average of ux20 4 minutes before the fire start is: 6.98 m/s
+The Average of uy20 4 minutes before the fire start is: -9.65 m/s
+The Average of uz20 4 minutes before the fire start is: -0.34 m/s
+The Average of ux10 4 minutes before the fire start is: 6.33 m/s
+The Average of uy10 4 minutes before the fire start is: -8.51 m/s
+The Average of uz10 4 minutes before the fire start is: -0.48 m/s
+The Average of ux6 4 minutes before the fire start is: 6.66 m/s
+The Average of uy6 4 minutes before the fire start is: -8.20 m/s
+The Average of uz6 4 minutes before the fire start is: -0.48 m/s
+
+The Average of ux20 4 minutes after the fire start is: 5.46 m/s
+The Average of uy20 4 minutes after the fire start is: -7.27 m/s
+The Average of uz20 4 minutes after the fire start is: -0.07 m/s
+The Average of ux10 4 minutes after the fire start is: 4.94 m/s
+The Average of uy10 4 minutes after the fire start is: -6.81 m/s
+The Average of uz10 4 minutes after the fire start is: -0.26 m/s
+The Average of ux6 4 minutes after the fire start is: 5.27 m/s
+The Average of uy6 4 minutes after the fire start is: -7.32 m/s
+The Average of uz6 4 minutes after the fire start is: -0.40 m/s
+
+The Average of ux20 10 minutes after the fire start is: 4.94 m/s
+The Average of uy20 10 minutes after the fire start is: -7.69 m/s
+The Average of uz20 10 minutes after the fire start is: -0.19 m/s
+The Average of ux10 10 minutes after the fire start is: 4.58 m/s
+The Average of uy10 10 minutes after the fire start is: -7.02 m/s
+The Average of uz10 10 minutes after the fire start is: -0.29 m/s
+The Average of ux6 10 minutes after the fire start is: 5.10 m/s
+The Average of uy6 10 minutes after the fire start is: -7.31 m/s
+The Average of uz6 10 minutes after the fire start is: -0.37 m/s
+
+The Average of ux20 15 minutes after the fire start is: 5.22 m/s
+The Average of uy20 15 minutes after the fire start is: -7.32 m/s
+The Average of uz20 15 minutes after the fire start is: -0.12 m/s
+The Average of ux10 15 minutes after the fire start is: 4.86 m/s
+The Average of uy10 15 minutes after the fire start is: -6.79 m/s
+The Average of uz10 15 minutes after the fire start is: -0.26 m/s
+The Average of ux6 15 minutes after the fire start is: 5.37 m/s
+The Average of uy6 15 minutes after the fire start is: -7.10 m/s
+The Average of uz6 15 minutes after the fire start is: -0.34 m/s
+
+The Average of ux20 4 minutes before and 4 minutes after the fire start is: 6.22 m/s
+The Average of uy20 4 minutes before and 4 minutes after the fire start is: -8.46 m/s
+The Average of uz20 4 minutes before and 4 minutes after the fire start is: -0.20 m/s
+The Average of ux10 4 minutes before and 4 minutes after the fire start is: 5.63 m/s
+The Average of uy10 4 minutes before and 4 minutes after the fire start is: -7.66 m/s
+The Average of uz10 4 minutes before and 4 minutes after the fire start is: -0.37 m/s
+The Average of ux6 4 minutes before and 4 minutes after the fire start is: 5.96 m/s
+The Average of uy6 4 minutes before and 4 minutes after the fire start is: -7.76 m/s
+The Average of uz6 4 minutes before and 4 minutes after the fire start is: -0.44 m/s

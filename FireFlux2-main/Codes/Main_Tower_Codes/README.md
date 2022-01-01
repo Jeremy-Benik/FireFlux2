@@ -1,5 +1,6 @@
 # Main Tower Codes
 The first and most important codes here are: Main_Tower_Plot_30min_All_Vars, Plotting_first_600seconds file, and Time_Averaged_Wind_Speed_Bar_Plot
+
 The Main_Tower_Plot_34min_All_Vars file truncates the main file to show 4 minutes before the fire, and 30 minutes after the fire ignition. The main purpose of this plot is to see when the firefront passage occurred, and how the variables responded to the fire. There is also a 5 second rolling time average for the variables to see how the variables responded on a 5 second average. 
 
 The Plotting_first_600seconds file truncates the original file to 10 minutes after ignition to better see how the measurements respomd to the fire passage. It's more defined than the 34min file. 

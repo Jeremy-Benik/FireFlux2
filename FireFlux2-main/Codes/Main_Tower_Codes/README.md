@@ -12,3 +12,5 @@ The Calculating_Average_Wind_Profiles program averages the wind vectors over a g
 The File_Truncating file truncates the file and saves it as a new file to make working with the time easier since I won't need to constantly truncate the same file, instead, I will have the already cut files. 
 
 The Time_Averaged_Variables_Bar_Plot_and_Direction file averages all the wind vecors and plots then in a bar graph with their respective height on the Main Tower. The direction of these winds was also calculated and plotted in a bar graph. 
+
+The Vector_Plot_Winds_Main_Tower provides a vector plot of all times looked at when averaging the data (4, 8, 10, 15min) and created a vector plot of them all to see what the winds were doing. There was so much data I ended up skipping every 20th for most then every 30th for the 15 minute time interval to make the graph more legible. 

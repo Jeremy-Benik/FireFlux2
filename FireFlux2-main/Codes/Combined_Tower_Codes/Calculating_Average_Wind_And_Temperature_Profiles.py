@@ -2,7 +2,7 @@
 """
 Created on Thu Dec 23 13:29:00 2021
 
-@author: Rubix
+@author: Jeremy Benik
 """
 
 import numpy as np
@@ -39,6 +39,9 @@ filenames = glob.glob(path + "/*.csv")
 # %% making a for loop to iterate through all the files and make plots of them all at once
 n = 5 #this is a 5 second average of the data
 t_all = []
+u_all = []
+v_all = []
+w_all = []
 for filename in filenames:
     df1 = pd.read_csv((filename), parse_dates = ['TIMESTAMP'])
     df = df1.truncate(before= np.where(df1['TIMESTAMP'] == '1/30/2013  15:04:00')[0][3], 
@@ -48,8 +51,14 @@ for filename in filenames:
     v = df['v']
     w = df['w']
     t = df['t']
-    varlist = ['t']
+    varlist = ['u', 'v', 'w', 't']
     for var in varlist:
         #print('The Average of {} 4 minutes before and 4 minutes after the fire start is: {:.2f}'.format(var, st.mean(vars()[var])))
         t_all.append(st.mean(vars()[var]))
-print('Mean of the temperatures from the short towers at specified time is:' st.mean(t_all))
+        u_all.append(st.mean(vars()[var]))
+        v_all.append(st.mean(vars()[var]))
+        w_all.append(st.mean(vars()[var]))
+print('Mean of the temperatures from the short towers at specified time is:', st.mean(t_all))
+print('Mean of the U wind from the short towers at specified time is:', st.mean(u_all))
+print('Mean of the V wind from the short towers at specified time is:', st.mean(v_all))
+print('Mean of the W wind from the short towers at specified time is:', st.mean(w_all))

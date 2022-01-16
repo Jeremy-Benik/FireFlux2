@@ -21,21 +21,21 @@ df = df1.truncate(before= np.where(df1['TIMESTAMP'] == '1/30/2013  15:00:00')[0]
                     after=np.where(df1['TIMESTAMP'] == '1/30/2013  15:04:00')[0][80])
 
 #Reasding in the variables
-time = df['TIMESTAMP'][1::20] #defining time and the indexing is to start at the first element and skip every 20th element
+time = df['TIMESTAMP'][1::40] #defining time and the indexing is to start at the first element and skip every 20th element
 #Since there are a lot of data points, plotting them looks terrible so by plotting every 20th data point, it looks much better
-ux20 = df['Ux_20m'][1::20]
-uy20 = df['Uy_20m'][1::20]
-uz20 = df['Uz_20m'][1::20]
-ts20 = df['Ts_20m'][1::20]
-ux10 = df['Ux_10m'][1::20]
-uy10 = df['Uy_10m'][1::20]
-uz10 = df['Uz_10m'][1::20]
-ts10 = df['Ts_10m'][1::20]
-ux6 = df['Ux_6m'][1::20]
-uy6 = df['Uy_6m'][1::20]
-uz6 = df['Uz_6m'][1::20]
-ts6 = df['Ts_6m'][1::20]
-n = 2 #This is set to 2 since I'm iterating every 20th number, and there are 10 measurements per second, so to 
+ux20 = df['Ux_20m'][1::40]
+uy20 = df['Uy_20m'][1::40]
+uz20 = df['Uz_20m'][1::40]
+ts20 = df['Ts_20m'][1::40]
+ux10 = df['Ux_10m'][1::40]
+uy10 = df['Uy_10m'][1::40]
+uz10 = df['Uz_10m'][1::40]
+ts10 = df['Ts_10m'][1::40]
+ux6 = df['Ux_6m'][1::40]
+uy6 = df['Uy_6m'][1::40]
+uz6 = df['Uz_6m'][1::40]
+ts6 = df['Ts_6m'][1::40]
+n = 5 #This is set to 2 since I'm iterating every 20th number, and there are 10 measurements per second, so to 
 #accurately get the time, I need to mulitply is by two to get the actual seconds of the data. 
 #time = np.array(time)
 
@@ -59,7 +59,7 @@ ax.legend(height)
 
 # there's gonna be a lot of arrows. Use a subset. Maybe every minute to see what's going on. I could even do an average across some time period.
 ax.set_ylim([0, 25])
-ax.set_xlim([0, len(time)])
+ax.set_xlim([0, n * len(time)])
 ax.set_xlabel('Time (Seconds)', fontsize = 18, fontweight = 'bold')
 ax.set_ylabel('Height (m)', fontsize = 18, fontweight = 'bold')
 ax.set_title('Wind Vectors From Main Tower At Different Levels Taken 4 Minutes Before Ignition', fontsize = 22, fontweight = 'bold' )
@@ -79,21 +79,21 @@ df = df1.truncate(before= np.where(df1['TIMESTAMP'] == '1/30/2013  15:00:00')[0]
                     after=np.where(df1['TIMESTAMP'] == '1/30/2013  15:08:00')[0][80])
 
 #Reasding in the variables
-time = df['TIMESTAMP'][1::20] #defining time and the indexing is to start at the first element and skip every 20th element
+time = df['TIMESTAMP'][1::60] #defining time and the indexing is to start at the first element and skip every 20th element
 #Since there are a lot of data points, plotting them looks terrible so by plotting every 20th data point, it looks much better
-ux20 = df['Ux_20m'][1::20]
-uy20 = df['Uy_20m'][1::20]
-uz20 = df['Uz_20m'][1::20]
-ts20 = df['Ts_20m'][1::20]
-ux10 = df['Ux_10m'][1::20]
-uy10 = df['Uy_10m'][1::20]
-uz10 = df['Uz_10m'][1::20]
-ts10 = df['Ts_10m'][1::20]
-ux6 = df['Ux_6m'][1::20]
-uy6 = df['Uy_6m'][1::20]
-uz6 = df['Uz_6m'][1::20]
-ts6 = df['Ts_6m'][1::20]
-n = 2 #This is set to 2 since I'm iterating every 20th number, and there are 10 measurements per second, so to 
+ux20 = df['Ux_20m'][1::60]
+uy20 = df['Uy_20m'][1::60]
+uz20 = df['Uz_20m'][1::60]
+ts20 = df['Ts_20m'][1::60]
+ux10 = df['Ux_10m'][1::60]
+uy10 = df['Uy_10m'][1::60]
+uz10 = df['Uz_10m'][1::60]
+ts10 = df['Ts_10m'][1::60]
+ux6 = df['Ux_6m'][1::60]
+uy6 = df['Uy_6m'][1::60]
+uz6 = df['Uz_6m'][1::60]
+ts6 = df['Ts_6m'][1::60]
+n = 6 #This is set to 2 since I'm iterating every 20th number, and there are 10 measurements per second, so to 
 #accurately get the time, I need to mulitply is by two to get the actual seconds of the data. 
 #time = np.array(time)
 
@@ -117,7 +117,7 @@ ax.legend(height)
 
 # there's gonna be a lot of arrows. Use a subset. Maybe every minute to see what's going on. I could even do an average across some time period.
 ax.set_ylim([0, 25])
-ax.set_xlim([0, len(time)])
+ax.set_xlim([0, n * len(time)])
 ax.set_xlabel('Time (Seconds)', fontsize = 18, fontweight = 'bold')
 ax.set_ylabel('Height (m)', fontsize = 18, fontweight = 'bold')
 ax.set_title('Wind Vectors From Main Tower At Different Levels Taken 4 Min Before and 4min After Ignition', fontsize = 22, fontweight = 'bold' )
@@ -138,21 +138,21 @@ df = df1.truncate(before= np.where(df1['TIMESTAMP'] == '1/30/2013  15:04:00')[0]
                     after=np.where(df1['TIMESTAMP'] == '1/30/2013  15:14:00')[0][80])
 
 #Reasding in the variables
-time = df['TIMESTAMP'][1::20] #defining time and the indexing is to start at the first element and skip every 20th element
+time = df['TIMESTAMP'][1::80] #defining time and the indexing is to start at the first element and skip every 20th element
 #Since there are a lot of data points, plotting them looks terrible so by plotting every 20th data point, it looks much better
-ux20 = df['Ux_20m'][1::20]
-uy20 = df['Uy_20m'][1::20]
-uz20 = df['Uz_20m'][1::20]
-ts20 = df['Ts_20m'][1::20]
-ux10 = df['Ux_10m'][1::20]
-uy10 = df['Uy_10m'][1::20]
-uz10 = df['Uz_10m'][1::20]
-ts10 = df['Ts_10m'][1::20]
-ux6 = df['Ux_6m'][1::20]
-uy6 = df['Uy_6m'][1::20]
-uz6 = df['Uz_6m'][1::20]
-ts6 = df['Ts_6m'][1::20]
-n = 2 #This is set to 2 since I'm iterating every 20th number, and there are 10 measurements per second, so to 
+ux20 = df['Ux_20m'][1::80]
+uy20 = df['Uy_20m'][1::80]
+uz20 = df['Uz_20m'][1::80]
+ts20 = df['Ts_20m'][1::80]
+ux10 = df['Ux_10m'][1::80]
+uy10 = df['Uy_10m'][1::80]
+uz10 = df['Uz_10m'][1::80]
+ts10 = df['Ts_10m'][1::80]
+ux6 = df['Ux_6m'][1::80]
+uy6 = df['Uy_6m'][1::80]
+uz6 = df['Uz_6m'][1::80]
+ts6 = df['Ts_6m'][1::80]
+n = 8 #This is set to 2 since I'm iterating every 20th number, and there are 10 measurements per second, so to 
 #accurately get the time, I need to mulitply is by two to get the actual seconds of the data. 
 #time = np.array(time)
 
@@ -176,7 +176,7 @@ ax.legend(height)
 
 # there's gonna be a lot of arrows. Use a subset. Maybe every minute to see what's going on. I could even do an average across some time period.
 ax.set_ylim([0, 25])
-ax.set_xlim([0, len(time)])
+ax.set_xlim([0, n * len(time)])
 ax.set_xlabel('Time (Seconds)', fontsize = 18, fontweight = 'bold')
 ax.set_ylabel('Height (m)', fontsize = 18, fontweight = 'bold')
 ax.set_title('Wind Vectors From Main Tower At Different Levels Taken 10 Minutes After Ignition', fontsize = 22, fontweight = 'bold' )
@@ -195,21 +195,21 @@ df = df1.truncate(before= np.where(df1['TIMESTAMP'] == '1/30/2013  15:04:00')[0]
                     after=np.where(df1['TIMESTAMP'] == '1/30/2013  15:19:00')[0][80])
 
 #Reasding in the variables
-time = df['TIMESTAMP'][1::30] #defining time and the indexing is to start at the first element and skip every 20th element
+time = df['TIMESTAMP'][1::100] #defining time and the indexing is to start at the first element and skip every 20th element
 #Since there are a lot of data points, plotting them looks terrible so by plotting every 20th data point, it looks much better
-ux20 = df['Ux_20m'][1::30]
-uy20 = df['Uy_20m'][1::30]
-uz20 = df['Uz_20m'][1::30]
-ts20 = df['Ts_20m'][1::30]
-ux10 = df['Ux_10m'][1::30]
-uy10 = df['Uy_10m'][1::30]
-uz10 = df['Uz_10m'][1::30]
-ts10 = df['Ts_10m'][1::30]
-ux6 = df['Ux_6m'][1::30]
-uy6 = df['Uy_6m'][1::30]
-uz6 = df['Uz_6m'][1::30]
-ts6 = df['Ts_6m'][1::30]
-n = 3 #This is set to 3 since I'm iterating every 30th number, and there are 10 measurements per second, so to 
+ux20 = df['Ux_20m'][1::100]
+uy20 = df['Uy_20m'][1::100]
+uz20 = df['Uz_20m'][1::100]
+ts20 = df['Ts_20m'][1::100]
+ux10 = df['Ux_10m'][1::100]
+uy10 = df['Uy_10m'][1::100]
+uz10 = df['Uz_10m'][1::100]
+ts10 = df['Ts_10m'][1::100]
+ux6 = df['Ux_6m'][1::100]
+uy6 = df['Uy_6m'][1::100]
+uz6 = df['Uz_6m'][1::100]
+ts6 = df['Ts_6m'][1::100]
+n = 10 #This is set to 3 since I'm iterating every 30th number, and there are 10 measurements per second, so to 
 #accurately get the time, I need to mulitply is by three to get the actual seconds of the data. 
 #All the other plots skipped the 20th element, but since there are so many points here I used 3 to make the graph legible
 #time = np.array(time)
@@ -234,7 +234,7 @@ ax.legend(height)
 
 # there's gonna be a lot of arrows. Use a subset. Maybe every minute to see what's going on. I could even do an average across some time period.
 ax.set_ylim([0, 25])
-ax.set_xlim([0, len(time)])
+ax.set_xlim([0, n * len(time)])
 ax.set_xlabel('Time (Seconds)', fontsize = 18, fontweight = 'bold')
 ax.set_ylabel('Height (m)', fontsize = 18, fontweight = 'bold')
 ax.set_title('Wind Vectors From Main Tower At Different Levels Taken 15 Minutes After Ignition', fontsize = 22, fontweight = 'bold' )

@@ -49,7 +49,7 @@ ts6 = df['Ts_6m']
 n = 50
 time2 = np.arange(0, len(time)) / 10
 fig, ax = plt.subplots(4, 3, figsize = (20, 10))
-fig.suptitle('35 minutes of data from 15:00 CST, to start of fire at 15:04, then 30 minutes of data after that', fontsize=18, fontweight = 'bold')
+fig.suptitle('34 minutes of data from 15:00 CST, to start of fire at 15:04, then 30 minutes of data after that', fontsize=18, fontweight = 'bold')
 ax[0, 0].plot(time2, ux20, 'r', label = 'ux20m winds')
 ax[0, 0].plot(time2, ux20.rolling(window = n).mean(), 'black', label = 'Avg. ux20m winds', linestyle = '-')
 ax[0, 0].set_title('ux20 winds vs time(s)', fontsize = 18, fontweight = 'bold')

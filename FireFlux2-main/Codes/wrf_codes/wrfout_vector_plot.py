@@ -1,3 +1,6 @@
+#This file does not have the data in this github as the files are too large. This program was created using VScode in Spartan using the wrfout file
+#This program creates a wind vector plot at 5.33m, 5.77m, 10m, and 20m to compare to the tower data from the experiment. In order to change the heights,
+#you will need to change the variable levels, and need to change the legend and possibly the colours used in this code.
 import matplotlib.pyplot as plt
 import numpy as np
 import xarray as xr

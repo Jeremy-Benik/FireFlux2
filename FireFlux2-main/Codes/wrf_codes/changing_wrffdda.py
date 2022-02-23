@@ -12,10 +12,7 @@ from wrf import vinterp, getvar #These are used to read in the wrf variables and
 # %% Calling in the files and defining them
 wrfin_ideal = nc.Dataset('/home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files/wrfinput_ideal_modified', 'r', format='NETCDF4')
 wrfin_real = nc.Dataset('/home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files/wrfin_adam_real', 'r', format='NETCDF4')
-wrffdda_mod = nc.Dataset('/home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files/wrffdda_d01_mod', 'a', format='NETCDF4')
 wrffdda = nc.Dataset('/home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files/wrffdda_d01', 'r', format='NETCDF4')
-wrffdda_xr = xr.open_dataset('/home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files/wrffdda_d01')
-wrffdda2 = nc.Dataset('/home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files/wrffdda_d02', 'r', format='NETCDF4')
 # %% wrfin variables
 U_ideal = getvar(wrfin_ideal, "ua", None, units = "m/s") 
 V_ideal = getvar(wrfin_ideal, "va", None, units = "m/s") 
@@ -67,37 +64,40 @@ wrfin_q = vinterp(wrfin_ideal, wrffdda_q_old_height, 'ght_agl', height_ideal[0, 
 wrfin_t = vinterp(wrfin_ideal, wrffdda_t_old_height, 'ght_agl', height_ideal[0, :, 0, 0], extrapolate = True)
 #wrfin_mu = vinterp(wrfin_ideal, wrffdda_mu_old_height, 'ght_agl', height_ideal[0, :, 0, 0])
 # %% Writing to the file
+#defining the file. Note, this is not the wrffdda file, I made a copy and wrote my changes to that file. 
+wrffdda_mod = nc.Dataset('/home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files/wrffdda_d01_mod', 'a', format='NETCDF4') #This is a copied file from the wrffdda and is the file that I will be writing my data to. 
+
+#Changing the u_old winds
 u_old_changed = wrffdda_mod.variables['U_NDG_OLD']
 u_old_changed[0] = wrfin_u
 u_old_changed[1] = wrfin_u
-
+#Changing the U_new winds
 u_new_changed = wrffdda_mod.variables['U_NDG_NEW']
 u_new_changed[0] = wrfin_u
 u_new_changed[1] = wrfin_u
-
+#Changing the v_old winds
 v_old_changed = wrffdda_mod.variables['V_NDG_OLD']
 v_old_changed[0] = wrfin_v
 v_old_changed[1] = wrfin_v
-
+#changing the v_new winds
 v_new_changed = wrffdda_mod.variables['V_NDG_NEW']
 v_new_changed[0] = wrfin_v
 v_new_changed[1] = wrfin_v
-
+#changing the t_old winds
 t_old_changed = wrffdda_mod.variables['T_NDG_OLD']
 t_old_changed[0] = wrfin_t
 t_old_changed[1] = wrfin_t
-
+#Changing the t_new winds
 t_new_changed = wrffdda_mod.variables['T_NDG_NEW']
 t_new_changed[0] = wrfin_t
 t_new_changed[1] = wrfin_t
-
+#changing the q_old values
 q_old_changed = wrffdda_mod.variables['Q_NDG_OLD']
 q_old_changed[0] = wrfin_q
 q_old_changed[1] = wrfin_q
-
+#changing the q_new variables
 q_new_changed = wrffdda_mod.variables['Q_NDG_NEW']
 q_new_changed[0] = wrfin_q
 q_new_changed[1] = wrfin_q
-
-
+#closing the file
 wrffdda_mod.close()

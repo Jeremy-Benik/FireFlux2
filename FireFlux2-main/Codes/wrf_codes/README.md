@@ -1,4 +1,12 @@
 # WRF Codes (input and output files)
+Most of the files necessary for these codes can be found on the ember or spartan cluster at: /home/jbenik/FirefluxII/Codes_and_Data/Data/wrf_files. I try to keep the two servers the same in terms of what files I have on there. 
 
+changing_wrffdda.py: This code takes a wrfinput file from both a real case and an ideal case, and it takes in wrffdda files from the real case. With those code, it interpolates the variables from the wrffdda file to the heights in the real wrfinput since there is no height coordinate in the wrffdda files. With this, I then interpolate the data to the levels in the wrfinput from the ideal case, and I change the data in the wrffdda file to match that of the wrfinput file. I set both the old and new values, and both timesteps to the values in the wrfinput file (a file with only one timestep)
+
+wrffdda_code.py: this code will create a plot of the wrffdda variables versus the PH variable. This code also plots the data compared to the wrfinput file from an idealized run, and the input_sounding file used to make the ideal wrfinput file. Those lines have been commented out but can be easily uncommented and run to see how the files are different.
+
+wrffdda_time_shifted_plot.py: This code time shifts the old and new variables to see how those two variables compare to each other. What I found is the new variables are time shifted by one time step. Meaning the values are identical, but off by one timestep.
+
+wrfinput_code.py: this code creates a plot of the variables in the wrfinput file. The file used in the code was from my idealized run. 
 
 wrfout_vector_plot.py creates a wind vector plot at certain levels. The winds are pointed towards the tower if looking at it that way. This code takes in a wrfout file and plots U and V at various height levels. This code will have to be put into a server with a wrfout file since the files are too big to fit into the data file in this github. 

@@ -10,3 +10,5 @@ wrffdda_time_shifted_plot.py: This code time shifts the old and new variables to
 wrfinput_code.py: this code creates a plot of the variables in the wrfinput file. The file used in the code was from my idealized run. 
 
 wrfout_vector_plot.py creates a wind vector plot at certain levels. The winds are pointed towards the tower if looking at it that way. This code takes in a wrfout file and plots U and V at various height levels. This code will have to be put into a server with a wrfout file since the files are too big to fit into the data file in this github. 
+
+tower_data_compared_to_wrfout.py gets the data from the wrfout file and from the towers, and compares the variables from the towers and from the wrfout file to see how they compare. This can help verify the ROS of the model output as well as seee the differences between the model output and what the towers recorded. This code plots both the main tower data and short tower data. As a quick note, this code will take about an hour to run on the ember cluster

@@ -12,11 +12,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import glob
-from metpy.units import units
+#from metpy.units import units
 import statistics as st
-import math
+#import math
 # %% importing the data using glob so I can read all the files at once
-path = r'/media/jeremy/Data/Fireflux2/Website_Docs/Short_Tower_Data'
+path = r'/home/jbenik/FirefluxII/FireFlux2-main/Data/Short_Tower_Data'
 filenames = glob.glob(path + "/*.csv")
 # %% making a for loop to iterate through all the files and make plots of them all at once
 n = 5 #this is a 5 second average of the data

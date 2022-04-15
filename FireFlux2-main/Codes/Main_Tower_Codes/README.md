@@ -14,3 +14,7 @@ The File_Truncating file truncates the file and saves it as a new file to make w
 The Time_Averaged_Variables_Bar_Plot_and_Direction file averages all the wind vecors and plots then in a bar graph with their respective height on the Main Tower. The direction of these winds was also calculated and plotted in a bar graph. 
 
 The Vector_Plot_Winds_Main_Tower provides a vector plot of all times looked at when averaging the data (4, 8, 10, 15min) and created a vector plot of them all to see what the winds were doing. There was so much data I ended up skipping every 20th for most then every 30th for the 15 minute time interval to make the graph more legible. 
+
+The Main_tower_winds_wrfout_comparison.py plots the winds from the tower data compared to the wrfout file to see how they differ from each other
+
+The temperature_wrfout_comparison.py plots the temperatures from the main tower compared to the wrfout file to see how they compare and to figure out the rate of spraed for the fire.

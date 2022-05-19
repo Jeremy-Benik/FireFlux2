@@ -18,3 +18,5 @@ The Vector_Plot_Winds_Main_Tower provides a vector plot of all times looked at w
 The Main_tower_winds_wrfout_comparison.py plots the winds from the tower data compared to the wrfout file to see how they differ from each other
 
 The temperature_wrfout_comparison.py plots the temperatures from the main tower compared to the wrfout file to see how they compare and to figure out the rate of spraed for the fire.
+
+Main_Tower_Wind_Speed_W_Wind_Temp.py plots the Wind speed, W wind, and temperature from the main tower. Instead of plotting U and V, it plots the wind speed calculated from the U and V components. 

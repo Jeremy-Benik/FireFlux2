@@ -10,7 +10,7 @@ import pandas as pd #importing pandas so I can use it to read in the file
 import matplotlib.pyplot as plt #importing matplotlib to create the plot
 import numpy as np #importing numpy as I need it for calculating the square root to get wind speeds and np.where
 
-df1 = pd.read_csv('/media/jeremy/Data/Fireflux2/Website_Docs/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
+df1 = pd.read_csv('/home/jbenik/FirefluxII/Codes_and_Data/Data/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
                   parse_dates=['TIMESTAMP'], skiprows = (0, 2, 3)) #setting df1 to the dataframe, change this to your path
 #and you will also likely need to change the parse_dates to your dates and skiprows to whatever rows you want to skip
 
@@ -68,7 +68,7 @@ plt.tight_layout()
 plt.show()
 
 # %% 4 min before and 4 min after (8 min total)
-df1 = pd.read_csv('/media/jeremy/Data/Fireflux2/Website_Docs/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
+df1 = pd.read_csv('/home/jbenik/FirefluxII/Codes_and_Data/Data/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
                   parse_dates=['TIMESTAMP'], skiprows = (0, 2, 3)) #setting df1 to the dataframe, change this to your path
 #and you will also likely need to change the parse_dates to your dates and skiprows to whatever rows you want to skip
 
@@ -127,7 +127,7 @@ plt.show()
 
 # %% 10 minutes after ignition
 
-df1 = pd.read_csv('/media/jeremy/Data/Fireflux2/Website_Docs/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
+df1 = pd.read_csv('/home/jbenik/FirefluxII/Codes_and_Data/Data/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
                   parse_dates=['TIMESTAMP'], skiprows = (0, 2, 3)) #setting df1 to the dataframe, change this to your path
 #and you will also likely need to change the parse_dates to your dates and skiprows to whatever rows you want to skip
 
@@ -184,7 +184,7 @@ ax.set_title('Wind Vectors From Main Tower At Different Levels Taken 10 Minutes 
 plt.tight_layout()
 plt.show()
 # %% 15 minutes after ignition
-df1 = pd.read_csv('/media/jeremy/Data/Fireflux2/Website_Docs/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
+df1 = pd.read_csv('/home/jbenik/FirefluxII/Codes_and_Data/Data/Main_Tower_Data/Proc_FF2_10HzMTdespiked_rotated.csv', 
                   parse_dates=['TIMESTAMP'], skiprows = (0, 2, 3)) #setting df1 to the dataframe, change this to your path
 #and you will also likely need to change the parse_dates to your dates and skiprows to whatever rows you want to skip
 

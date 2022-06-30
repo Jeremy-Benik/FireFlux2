@@ -20,7 +20,7 @@ import pandas as pd
 # %% Importing the file
 
 print('Reading in the file')
-wrfout = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfout_files/wrfout_d01_2013-01-30_15:00:00')
+wrfout = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfout_files/backfire_modified_wrfout_d01_2013-01-30_15:00:00')
 
 
 # %% importing variables
@@ -52,7 +52,8 @@ print('That was for 4 meters away from the burn, now I will be calculating the d
 
 
 print('Reading in the second file')
-wrfout = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfout_files/wrfout_d01_2013-01-30_15:16:40')
+wrfout = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfout_files/wrfout_cheyenne/wrfout_d01_2013-01-30_15:29:01')
+#wrfout = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfout_files/backfire_modified_wrfout_d01_2013-01-30_15:16:40')
 
 
 # %% importing variables
@@ -98,10 +99,14 @@ print('The ROS between the roof is:', 8/(time_point_2 - time_point_1))
 start_y_subgrid = fxlat[:, 1993, :]
 start_x_subgrid = fxlong[:, :, 809]
 
+#for the run on ember with modified coefficient, the points I chose were 2032, 753
+#for the run on cheyenne with 0.93, the values are: 2013, 760
 
-end_y_subgrid = fxlat[:, 2032, :]
+end_y_subgrid = fxlat[:, 2013, :]
 end_x_subgrid = fxlong[:, :, 753]
 
 print('The total backfire ROS is:', 
-np.sqrt(((fxlat[0, 2032, 0] - fxlat[0, 1993, 0]) ** 2) + ((fxlong[0, 0, 809] - fxlong[0, 0, 753]) ** 2)) 
-/ (np.where(fire_area[:, 2032, 753] > 0)[0][0] + (1000 - 248)))
+np.sqrt(((fxlat[0, 2013, 0] - fxlat[0, 1993, 0]) ** 2) + ((fxlong[0, 0, 809] - fxlong[0, 0, 760]) ** 2)) 
+/ (np.where(fire_area[:, 2013, 760] > 0)[0][0] + (1550)))
+
+# %%

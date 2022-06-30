@@ -15,6 +15,9 @@ Created on Sat March 15 11:36:54 2022
 #Fire start (first ignition) on the grid
 #fire_ignition_start_x1 = 405
 #fire_ignition_start_y1 = 997
+
+#This is really used fo the real case. for the ideal case, I will have to use what I was using before with my calculated positions
+
 '''The time at which the fire area arrives at the MAIN TOWER is: 341
 *****************************
 The time at which the fire area arrives at the EAST TOWER is: 401
@@ -23,15 +26,24 @@ The time at which the fire area arrives at the WEST TOWER is: 497
 *****************************
 The time at which the fire area arrives at the SOUTH TOWER is: 551'''
 # %% Importing libraries
+from clamp2mesh import nearest_idx, interpolate_coords
 print("importing necessary libraries")
 import netCDF4 as nc
 import numpy as np
 import xarray as xr
 import pandas as pd
 import wrf
+'''
+def nearest_idx(lons,lats,x,y):
+    flons = lons.flatten()
+    flats = lats.flatten()
+    xd = flons - x
+    yd = flats - y
+    idx = (xd*xd + yd*yd).argmin()
+    return np.unravel_index(idx,lons.shape) '''
 # %% Reading in the files
 print("Reading in the wrfout file")
-wrfout = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfout_files/wrfout_d01_2013-01-30_15:00:00', 'r')
+wrfout = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfout_d01_2013-01-30_15:00:00', 'r')
 print('Reading in the wrfin file')
 wrfin = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfin_d01_real', 'r')
 print('reading in the short towers')
@@ -43,7 +55,12 @@ df_s1 = pd.read_csv('/home/jbenik/FireFlux2/Codes_and_Data/Data/Short_Tower_Data
 
 
 # %% finding where the towers are
-
+# Create a variable with these coordinates. It will make my life easier later. I can even create a list for this since this command takes in a list
+# this will make my life easier, but this is documented well
+# first option, get fxlong and fxlat from wrfout file then this finds the closest index
+#I can use the same m stagger 
+# The wrf.ll_to_xy doesn't give the fire mesh.
+# I need to get the real wrfout file
 #main tower
 south_north_u = wrf.ll_to_xy(wrfin, 29.387975, -95.04142222222222, timeidx = 0, squeeze = False, meta = False, stagger = 'u')[1]
 west_east_stag_u = wrf.ll_to_xy(wrfin, 29.387975, -95.04142222222222, timeidx = 0, squeeze = False, meta = False, stagger = 'u')[0]
@@ -161,28 +178,7 @@ print('The time of arrival at the east tower in seconds is:', time[np.where(fuel
 print('The index for when the time where the south tower saw the fire in the wrfout file is: ', np.where(fuel_frac[:, south_north_s, west_east_s] < 1)[0][1])
 print('The time of arrival at the south tower in minutes is:', time[np.where(fuel_frac[:, south_north_s, west_east_s] < 1)[0][1]])
 print('The time of arrival at the south tower in seconds is:', time[np.where(fuel_frac[:, south_north_s, west_east_s] < 1)[0][1]] * 60)
-
-'''
-#main tower
-print('The index for when the time where the main tower saw the fire in the wrfout file is: ', np.where(fuel_frac[:, south_north_wrfout, west_east_wrfout] < 1)[0][1])
-print('The time of arrival at the main tower is:', time[np.where(fuel_frac[:, south_north_wrfout, west_east_wrfout] < 1)[0][1]])
-print('The time of arrival at the main tower is:', time[np.where(fuel_frac[:, south_north_wrfout, west_east_wrfout] < 1)[0][1]] * 60)
-
-# west tower
-print('The index for when the time where the west tower saw the fire in the wrfout file is: ', np.where(fuel_frac[:, south_north_w, west_east_w] < 1)[0][1])
-print('The time of arrival at the west tower is:', time[np.where(fuel_frac[:, south_north_w, west_east_w] < 1)[0][1]])
-print('The time of arrival at the west tower is:', time[np.where(fuel_frac[:, south_north_w, west_east_w] < 1)[0][1]] * 60)
-
-# east tower
-print('The index for when the time2 where the east tower saw the fire in the wrfout file is: ', np.where(fuel_frac[:, south_north_e, west_east_e] < 1)[0][1])
-print('The time of arrival at the east tower is:', time[np.where(fuel_frac[:, south_north_e, west_east_e] < 1)[0][1]])
-print('The time of arrival at the east tower is:', time[np.where(fuel_frac[:, south_north_e, west_east_e] < 1)[0][1]] * 60)
-
-# south tower
-print('The index for when the time where the south tower saw the fire in the wrfout file is: ', np.where(fuel_frac[:, south_north_s, west_east_s] < 1)[0][1])
-print('The time of arrival at the south tower in minutes is:', time[np.where(fuel_frac[:, south_north_s, west_east_s] < 1)[0][1]])
 print('The time of arrival at the south tower in seconds is:', time[np.where(fuel_frac[:, south_north_s, west_east_s] < 1)[0][1]] * 60)
-'''
 # %% Trying to use the fire mesh here instead of the atms mesh. For this I need to use the 2nd domain wrfin file from the real case to see where the fxlat and fxlong are for better accuracy in the file.
 print('**************************************************************************************\n')
 print('\n')
@@ -216,7 +212,38 @@ print('west_east south tower = ', west_east_s)
 print('\n')
 print('Figuring out where the fire area is greater than zero at the new points and see when the time it does this to compare it to the towers')
 # %% seeing where the fire area is greater than zero using the new grid
-print('TESTING', fire_area[:, south_north_wrfout, west_east_wrfout])
+#print('TESTING', np.where(fire_area[:, south_north_wrfout, west_east_wrfout] > 0)[0][0])
+
+#for the ideal case, I need to use the values I got by hand, and then compute the distance in the fire mesh. 
+# Look at the distance I computed by hand, and find where the closest atms mesh is
+# instead of atms mesh, use the fire mesh which will also be in meters from the corner. 
+
+
+
+#this is the fire mesh for the real case
+wrfin2 = nc.Dataset('/home/jbenik/FireFlux2/Codes_and_Data/Data/wrf_files/wrfinput_d02_real', 'r')
+
+'''
+def nearest_idx(lons,lats,x,y):
+    flons = lons.flatten()
+    flats = lats.flatten()
+    xd = flons - x
+    yd = flats - y
+    idx = (xd*xd + yd*yd).argmin()
+    return np.unravel_index(idx,lons.shape) '''
+xlong = wrfin2.variables['XLONG'][0][:]
+xlat = wrfin2.variables['XLAT'][0][:] #this will take everything in the first time step
+#now I need the subgrid ratio. these are in the namelist.input 
+srx = int(wrfin2.dimensions['west_east_subgrid'].size/(wrfin2.dimensions['west_east'].size+1))
+sry = int(wrfin2.dimensions['south_north_subgrid'].size/(wrfin2.dimensions['south_north'].size+1))
+fxlong,fxlat = interpolate_coords(xlong,xlat,srx,sry)
+
+
+# main tower
+print('******************************\n')
+print(nearest_idx(fxlong, fxlat, -95.04142222222222, 29.387975))
+
+
 '''
 #main tower
 print('The index for when the time where the main tower saw the fire in the wrfout file is: ', np.where(fire_area[:, south_north_wrfout, west_east_wrfout] > 0)[0][0])
@@ -234,3 +261,4 @@ print('The time of arrival at the east tower is:', time[np.where(fire_area[:, so
 print('The index for when the time where the south tower saw the fire in the wrfout file is: ', np.where(fire_area[:, south_north_s, west_east_s] > 0)[0][0])
 print('The time of arrival at the east tower is:', time[np.where(fire_area[:, south_north_s, west_east_s] > 0)[0][0]])
 '''
+# %%

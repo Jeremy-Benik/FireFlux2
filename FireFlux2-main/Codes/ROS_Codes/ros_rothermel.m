@@ -80,7 +80,8 @@ if ~ichap,
     %  eqn.: phiw = c * umid**bbb * (betafl/betaop)**(-e) ! wind coef
     phiw = umid^bbb * phiwc;                   % wind coef
     phis = 5.275 * betafl^(-0.3) *max(0,tanphi)^2;   % slope factor
-    ros = r_0*(1. + phiw + phis)  * .00508; % spread rate, m/s
+    %ros = r_0*(1. + phiw + phis)  * .00508; % spread rate, m/s
+    ros = (r_0 * .00508) + ((r_0 * phiw) * .00508) + ((r_0 * phis) * .00508) 
 else  % chapparal
     %        .... spread rate has no dependency on fuel character, only windspeed.
     spdms = max(speed,0.);

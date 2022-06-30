@@ -7,8 +7,8 @@ fuel(   1).fwh_descr = 'WIND HEIGHT TO INTERPOLATE VERTICALLY TO (M)';
 fuel(   1).fz0 = 0;
 fuel(   1).fz0_descr = ['ROUGHNESS LENGTH FOR VERTICAL WIND LOG INTERPOLA' ...
                       'TION (M)'];
-fuel(   1).fgi = 0.969;
-fuel(   1).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
+%fuel(   1).fgi = 0.969;
+%fuel(   1).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
 fuel(   1).fueldepthm = 1.8;
 fuel(   1).fueldepthm_descr = 'FUEL DEPTH (M)';
 fuel(   1).savr = 1219.51000000000;
@@ -59,6 +59,10 @@ fuel(   1).fuelmc_g_descr = 'FUEL PARTICLE (SURFACE) MOISTURE CONTENT';
 fuel(   1).fuelmc_c = 1;
 fuel(   1).fuelmc_c_descr = 'FUEL PARTICLE (CANOPY) MOISTURE CONTENT';
 
+
+fuel(   1).fgi = 0.375;
+fuel(   1).fgi_descr = 'Dead fuel load';
+fuel(   1).fgi_t = 0.969;
 fuel(   1).wind(  1)=  0.0000    ;% wind speed at 6.1m
 fuel(   1).ros_wind(  1)= 0.23984E-01;% rate of spread for the wind speed at 6.1m
 fuel(   1).slope(  1)=  0.0000    ;% slope
@@ -435,8 +439,8 @@ fuel(   2).fwh_descr = 'WIND HEIGHT TO INTERPOLATE VERTICALLY TO (M)';
 fuel(   2).fz0 = 0;
 fuel(   2).fz0_descr = ['ROUGHNESS LENGTH FOR VERTICAL WIND LOG INTERPOLA' ...
                       'TION (M)'];
-fuel(   2).fgi = 1.312;
-fuel(   2).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
+%fuel(   2).fgi = 1.312;
+%fuel(   2).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
 fuel(   2).fueldepthm = 1.8;
 fuel(   2).fueldepthm_descr = 'FUEL DEPTH (M)';
 fuel(   2).savr = 1219.51000000000;
@@ -486,6 +490,9 @@ fuel(   2).fuelmc_g_descr = 'FUEL PARTICLE (SURFACE) MOISTURE CONTENT';
 fuel(   2).fuelmc_c = 1;
 fuel(   2).fuelmc_c_descr = 'FUEL PARTICLE (CANOPY) MOISTURE CONTENT';
 
+
+fuel(   2).fgi = 0.387;
+fuel(   2).fgi_t = 1.312;
 fuel(   2).wind(  1)=  0.0000    ;% wind speed at 6.1m
 fuel(   2).ros_wind(  1)= 0.23984E-01;% rate of spread for the wind speed at 6.1m
 fuel(   2).slope(  1)=  0.0000    ;% slope
@@ -862,8 +869,8 @@ fuel(   3).fwh_descr = 'WIND HEIGHT TO INTERPOLATE VERTICALLY TO (M)';
 fuel(   3).fz0 = 0;
 fuel(   3).fz0_descr = ['ROUGHNESS LENGTH FOR VERTICAL WIND LOG INTERPOLA' ...
                       'TION (M)'];
-fuel(   3).fgi = 1.656;
-fuel(   3).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
+%fuel(   3).fgi = 1.656;
+%fuel(   3).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
 fuel(   3).fueldepthm = 1.8;
 fuel(   3).fueldepthm_descr = 'FUEL DEPTH (M)';
 fuel(   3).savr = 1219.51000000000;
@@ -913,6 +920,9 @@ fuel(   3).fuelmc_g_descr = 'FUEL PARTICLE (SURFACE) MOISTURE CONTENT';
 fuel(   3).fuelmc_c = 1;
 fuel(   3).fuelmc_c_descr = 'FUEL PARTICLE (CANOPY) MOISTURE CONTENT';
 
+
+fuel(   3).fgi = 0.379;
+fuel(   3).fgi_t = 1.656;
 fuel(   3).wind(  1)=  0.0000    ;% wind speed at 6.1m
 fuel(   3).ros_wind(  1)= 0.23984E-01;% rate of spread for the wind speed at 6.1m
 fuel(   3).slope(  1)=  0.0000    ;% slope
@@ -1289,8 +1299,8 @@ fuel(   4).fwh_descr = 'WIND HEIGHT TO INTERPOLATE VERTICALLY TO (M)';
 fuel(   4).fz0 = 0;
 fuel(   4).fz0_descr = ['ROUGHNESS LENGTH FOR VERTICAL WIND LOG INTERPOLA' ...
                       'TION (M)'];
-fuel(   4).fgi = 1.87;
-fuel(   4).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
+%fuel(   4).fgi = 1.87;
+%fuel(   4).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
 fuel(   4).fueldepthm = 1.8;
 fuel(   4).fueldepthm_descr = 'FUEL DEPTH (M)';
 fuel(   4).savr = 1219.51000000000;
@@ -1339,6 +1349,9 @@ fuel(   4).fuelmc_g = 0.08;
 fuel(   4).fuelmc_g_descr = 'FUEL PARTICLE (SURFACE) MOISTURE CONTENT';
 fuel(   4).fuelmc_c = 1;
 fuel(   4).fuelmc_c_descr = 'FUEL PARTICLE (CANOPY) MOISTURE CONTENT';
+
+fuel(   4).fgi = 0.496;
+fuel(   4).fgi_t = 1.87;
 fuel(   4).wind(  1)=  0.0000    ;% wind speed at 6.1m
 fuel(   4).ros_wind(  1)= 0.23984E-01;% rate of spread for the wind speed at 6.1m
 fuel(   4).slope(  1)=  0.0000    ;% slope
@@ -1716,8 +1729,8 @@ fuel(   5).fwh_descr = 'WIND HEIGHT TO INTERPOLATE VERTICALLY TO (M)';
 fuel(   5).fz0 = 0;
 fuel(   5).fz0_descr = ['ROUGHNESS LENGTH FOR VERTICAL WIND LOG INTERPOLA' ...
                       'TION (M)'];
-fuel(   5).fgi = 1.239;
-fuel(   5).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
+%fuel(   5).fgi = 1.239;
+%fuel(   5).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
 fuel(   5).fueldepthm = 1.8;
 fuel(   5).fueldepthm_descr = 'FUEL DEPTH (M)';
 fuel(   5).savr = 1219.51000000000;
@@ -1767,6 +1780,9 @@ fuel(   5).fuelmc_g_descr = 'FUEL PARTICLE (SURFACE) MOISTURE CONTENT';
 fuel(   5).fuelmc_c = 1;
 fuel(   5).fuelmc_c_descr = 'FUEL PARTICLE (CANOPY) MOISTURE CONTENT';
 
+
+fuel(   5).fgi = 0.298;
+fuel(   5).fgi_t = 1.239;
 fuel(   5).wind(  1)=  0.0000    ;% wind speed at 6.1m
 fuel(   5).ros_wind(  1)= 0.23984E-01;% rate of spread for the wind speed at 6.1m
 fuel(   5).slope(  1)=  0.0000    ;% slope
@@ -2143,8 +2159,8 @@ fuel(   6).fwh_descr = 'WIND HEIGHT TO INTERPOLATE VERTICALLY TO (M)';
 fuel(   6).fz0 = 0;
 fuel(   6).fz0_descr = ['ROUGHNESS LENGTH FOR VERTICAL WIND LOG INTERPOLA' ...
                       'TION (M)'];
-fuel(   6).fgi = 1.082;
-fuel(   6).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
+%fuel(   6).fgi = 1.082;
+%fuel(   6).fgi_descr = 'INITIAL TOTAL MASS OF SURFACE FUEL (KG/M**2)';
 fuel(   6).fueldepthm = 1.8;
 fuel(   6).fueldepthm_descr = 'FUEL DEPTH (M)';
 fuel(   6).savr = 1219.51000000000;
@@ -2194,6 +2210,9 @@ fuel(   6).fuelmc_g_descr = 'FUEL PARTICLE (SURFACE) MOISTURE CONTENT';
 fuel(   6).fuelmc_c = 1;
 fuel(   6).fuelmc_c_descr = 'FUEL PARTICLE (CANOPY) MOISTURE CONTENT';
 
+
+fuel(   6).fgi = 0.249;
+fuel(   6).fgi_t = 1.082;
 fuel(   6).wind(  1)=  0.0000    ;% wind speed at 6.1m
 fuel(   6).ros_wind(  1)= 0.23984E-01;% rate of spread for the wind speed at 6.1m
 fuel(   6).slope(  1)=  0.0000    ;% slope
